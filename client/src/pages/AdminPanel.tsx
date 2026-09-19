@@ -95,7 +95,13 @@ export default function AdminPanel() {
       setPassword("");
       await session.refetch();
     },
-    onError: () => setFormError("E-mail ou senha inválidos. Tente novamente."),
+    onError: error => {
+      setFormError(
+        error.data?.code === "UNAUTHORIZED"
+          ? "E-mail ou senha inválidos. Tente novamente."
+          : "O servidor administrativo está indisponível. Tente novamente em instantes.",
+      );
+    },
   });
   const logout = trpc.admin.logout.useMutation({
     onSuccess: async () => {

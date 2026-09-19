@@ -191,7 +191,7 @@ export async function getAdminRobloxProfiles(limit = 100) {
 }
 
 export const DEFAULT_COMMUNITY_LINKS = {
-  discordUrl: "https://discord.gg/FGvKRKeVA",
+  discordUrl: "https://discord.gg/AGCewwpPDC",
   robloxGroupUrl: "https://rblx.pk/gfR-67LI",
 } as const;
 

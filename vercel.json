@@ -4,6 +4,7 @@
   "buildCommand": "pnpm build:client",
   "outputDirectory": "dist/public",
   "rewrites": [
+    { "source": "/api/trpc/:path*", "destination": "/api/trpc" },
     { "source": "/manus-storage/:path*", "destination": "/api/manus-storage/:path*" },
     { "source": "/:path*", "destination": "/index.html" }
   ],
